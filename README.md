@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# todoms-ui
 
-## Getting Started
+Todomsはシンプルかつ効率的なタスク管理アプリケーションです。このリポジトリはTodomのフロントエンドUIのソースコードを含んでいます。
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+todoms-uiは、Next.jsとMaterial UIを使用して構築された、モダンでレスポンシブなTODO管理アプリケーションのフロントエンドです。ユーザー認証機能を備え、TODOアイテムの作成、管理、追跡を簡単に行うことができます。
+
+## 技術スタック
+
+- **フレームワーク**: [Next.js 15](https://nextjs.org/) (with Turbopack)
+- **UIライブラリ**: [Material UI 7](https://mui.com/)
+- **言語**: [TypeScript](https://www.typescriptlang.org/)
+- **状態管理**: Reactコンテキスト
+- **認証**: JWTトークンベース認証
+- **スタイリング**: [Emotion](https://emotion.sh/)
+- **日付処理**: [Date-fns](https://date-fns.org/)
+
+## 機能
+
+- **ユーザー認証**
+  - ユーザー登録
+  - ログイン/ログアウト
+  - トークンベース認証 (JWT)
+  
+- **TODO管理**
+  - TODO一覧の表示
+  - TODOの作成
+  - TODOの詳細表示・編集
+  - TODOの完了/未完了状態の切り替え
+  - TODOの削除
+  
+- **追加機能**
+  - 期限日の設定と表示
+  - TODO検索
+  - 並べ替え (更新日、期限日、タイトル、完了状態)
+
+## プロジェクト構成
+
+```
+todoms-ui/
+├── app/                 # Next.jsのアプリケーションルーター
+│   ├── auth/            # 認証関連ページ
+│   └── todos/           # TODOページ
+├── components/          # 再利用可能なReactコンポーネント
+├── config/              # アプリケーション設定
+├── lib/                 # ユーティリティやAPI関連コード
+└── public/              # 静的アセット
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 開発環境のセットアップ
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 前提条件
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js (18.x以上)
+- npm または yarn
 
-## Learn More
+### インストール
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# リポジトリをクローン
+git clone https://github.com/yourusername/todoms-ui.git
+cd todoms-ui
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 依存パッケージのインストール
+npm install
+# または
+yarn install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 開発サーバーの起動
 
-## Deploy on Vercel
+```bash
+# 開発サーバーを起動 (Turbopackを使用)
+npm run dev
+# または
+yarn dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+開発サーバーは http://localhost:3000 で実行されます。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ビルド
+
+```bash
+# プロダクション用ビルドの作成
+npm run build
+# または
+yarn build
+
+# ビルドしたアプリケーションの実行
+npm run start
+# または
+yarn start
+```
+
+## ライセンス
+
+[MITライセンス](LICENSE)
